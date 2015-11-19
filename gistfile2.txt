@@ -1,0 +1,24 @@
+Disassembly of section .text:
+
+0000000000000000 <sort(int*, int)>:
+   0:	8d 46 fe             	lea    eax,[rsi-0x2]
+   3:	4c 8d 44 87 04       	lea    r8,[rdi+rax*4+0x4]
+   8:	83 fe 01             	cmp    esi,0x1
+   b:	7e 32                	jle    3f <sort(int*, int)+0x3f>
+   d:	48 89 f8             	mov    rax,rdi
+  10:	41 b9 01 00 00 00    	mov    r9d,0x1
+  16:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+  1d:	00 00 00 
+  20:	8b 10                	mov    edx,DWORD PTR [rax]
+  22:	8b 48 04             	mov    ecx,DWORD PTR [rax+0x4]
+  25:	39 ca                	cmp    edx,ecx
+  27:	7e 08                	jle    31 <sort(int*, int)+0x31>
+  29:	89 08                	mov    DWORD PTR [rax],ecx
+  2b:	89 50 04             	mov    DWORD PTR [rax+0x4],edx
+  2e:	45 31 c9             	xor    r9d,r9d
+  31:	48 83 c0 04          	add    rax,0x4
+  35:	4c 39 c0             	cmp    rax,r8
+  38:	75 e6                	jne    20 <sort(int*, int)+0x20>
+  3a:	45 84 c9             	test   r9b,r9b
+  3d:	74 c9                	je     8 <sort(int*, int)+0x8>
+  3f:	f3 c3                	repz ret 

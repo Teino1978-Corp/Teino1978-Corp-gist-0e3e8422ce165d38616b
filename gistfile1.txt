@@ -1,0 +1,13 @@
+#include <utility>
+void sort(int *tab, int N){
+	bool sorted;
+	do {
+		sorted = true;
+		for(int i = 0; i < N - 1; ++i) {
+			if(tab[i] > tab[i+1]) {
+				std::swap(tab[i], tab[i+1]);
+				sorted = false;
+			}
+		}
+	} while(!sorted);
+}
